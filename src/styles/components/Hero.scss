@@ -1,0 +1,36 @@
+#hero {
+  @include flex(row, center, center);
+  .text-container {
+    width: 50%;
+    text-transform: uppercase;
+
+    p:last-child {
+      text-align: end;
+    }
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 700;
+
+      .span-group {
+        @include flex(row, space-between, center);
+
+        span {
+          transition: 0.1s;
+          &:hover {
+            transform: rotate(-15deg);
+          }
+          &:nth-of-type(even) {
+            &:hover {
+              transform: rotate(15deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .image-container {
+    width: 50%;
+  }
+}
