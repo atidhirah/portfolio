@@ -1,6 +1,9 @@
 @import "./Variables.scss";
 @import "./Mixin.scss";
 @import "./components/Header.scss";
+@import "./components/Hero.scss";
+@import "./components/Works.scss";
+@import "./components/About.scss";
 
 *,
 ::before,
@@ -8,6 +11,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,8 +26,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .container {
   width: 100%;
   max-width: 1080px;
   margin: auto;
+  padding-left: calc(max(2rem, 5vw));
+  padding-right: calc(max(2rem, 5vw));
+}
+
+.section {
+  height: 100vh;
+  padding-top: calc(#{$headerHeight} + 1rem);
 }

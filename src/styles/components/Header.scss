@@ -13,6 +13,7 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 2px;
+        cursor: pointer;
       }
     }
 
@@ -22,11 +23,9 @@
       .nav-item {
         list-style: none;
         height: 100%;
+        @include flex(row, center, center);
         margin: 0 1rem;
         .nav-link {
-          display: block;
-          height: 100%;
-          @include flex(row, center, center);
           font-size: 0.9rem;
           text-transform: uppercase;
           text-align: center;
@@ -48,6 +47,11 @@
             &:before {
               width: 100%;
             }
+          }
+        }
+        .active {
+          &:before {
+            width: 100%;
           }
         }
       }
