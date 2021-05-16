@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { Link } from "react-scroll";
+import { NavLink as LinkR } from "react-router-dom";
+import { Link as LinkS } from "react-scroll";
+
+export const TopPage = styled.div``;
 
 export const Container = styled.header`
   width: 100%;
@@ -21,7 +24,7 @@ export const LogoWrapper = styled.div`
   align-items: center;
 `;
 
-export const Logo = styled(Link)`
+export const Logo = styled(LinkS)`
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -36,7 +39,9 @@ export const NavItem = styled.li`
   list-style: none;
 `;
 
-export const NavLink = styled(Link)`
+export const NavLink = styled(LinkR)`
+  color: var(--clr-black);
+  text-decoration: none;
   text-transform: uppercase;
   font-size: 0.85rem;
   height: 100%;
@@ -44,5 +49,4 @@ export const NavLink = styled(Link)`
   justify-content: center;
   align-items: center;
   margin: 0 1rem;
-  cursor: pointer;
 `;

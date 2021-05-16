@@ -23,6 +23,10 @@ export const GlobalStyles = createGlobalStyle`
         sans-serif;
     }
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     .container {
         width: 100%;
         max-width: 1080px;
@@ -34,5 +38,10 @@ export const GlobalStyles = createGlobalStyle`
     .section {
         min-height: 100vh;
         padding-top: calc(var(--header-height) + 1rem);
+    }
+
+    .active-nav {
+        font-weight: 700;
+        pointer-events: none;
     }
 `;

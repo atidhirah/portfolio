@@ -1,6 +1,6 @@
 import React from "react";
-import { animateScroll as scroll } from "react-scroll";
 import {
+  TopPage,
   Container,
   Nav,
   LogoWrapper,
@@ -12,45 +12,36 @@ import {
 
 const Header = () => {
   return (
-    <Container>
-      <Nav className="container">
-        <LogoWrapper>
-          <Logo
-            activeClass="active-link"
-            to="hero"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Atidhira
-          </Logo>
-        </LogoWrapper>
-        <NavLinks>
-          <NavItem>
-            <NavLink
+    <>
+      <Container>
+        <Nav className="container">
+          <LogoWrapper>
+            <Logo
               activeClass="active-link"
-              to="works"
+              to="top"
               spy={true}
               smooth={true}
               duration={500}
             >
-              Works
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              activeClass="active-link"
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              About
-            </NavLink>
-          </NavItem>
-        </NavLinks>
-      </Nav>
-    </Container>
+              Atidhira
+            </Logo>
+          </LogoWrapper>
+          <NavLinks>
+            <NavItem>
+              <NavLink exact={true} activeClassName="active-nav" to="/">
+                About
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink activeClassName="active-nav" to="/blog">
+                Blog
+              </NavLink>
+            </NavItem>
+          </NavLinks>
+        </Nav>
+      </Container>
+      <TopPage id="top" />
+    </>
   );
 };
 
