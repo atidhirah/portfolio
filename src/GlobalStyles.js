@@ -4,8 +4,8 @@ export const GlobalStyles = createGlobalStyle`
 
     :root {
         --header-height: 3rem;
-        --clr-black: #000000;
-        --clr-white: #ffffff;
+        --clr-black: #111111;
+        --clr-white: #eeeeee;
     }
     
 
@@ -16,6 +16,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
+        background-color: var(--clr-black);
+        color: var(--clr-white);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-family: "Avenir", "Poppins", -apple-system, BlinkMacSystemFont,

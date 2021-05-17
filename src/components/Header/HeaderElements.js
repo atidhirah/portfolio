@@ -40,7 +40,7 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(LinkR)`
-  color: var(--clr-black);
+  color: var(--clr-white);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.85rem;
