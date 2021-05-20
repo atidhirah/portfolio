@@ -1,48 +1,46 @@
 import React from "react";
-import {
-  TopPage,
-  Container,
-  Nav,
-  LogoWrapper,
-  Logo,
-  NavLinks,
-  NavItem,
-  NavLink,
-} from "./HeaderElements";
+import { Container, Navigation } from "./HeaderElements";
 
-const Header = () => {
-  return (
-    <>
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      docHeight: 0,
+      scrollPos: 0,
+    };
+  }
+
+  handleScroll() {
+    this.setState({
+      scrollPos: document.documentElement.scrollTop,
+    });
+  }
+
+  render() {
+    let percentage = (this.state.scrollPos / this.state.docHeight) * 100 || 0;
+
+    return (
       <Container>
-        <Nav className="container">
-          <LogoWrapper>
-            <Logo
-              activeClass="active-link"
-              to="top"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Atidhira
-            </Logo>
-          </LogoWrapper>
-          <NavLinks>
-            <NavItem>
-              <NavLink exact={true} activeClassName="active-nav" to="/">
-                About
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink activeClassName="active-nav" to="/blog">
-                Blog
-              </NavLink>
-            </NavItem>
-          </NavLinks>
-        </Nav>
+        <Navigation percentage={percentage}></Navigation>
       </Container>
-      <TopPage id="top" />
-    </>
-  );
-};
+    );
+  }
+
+  componentDidMount() {
+    if (this.state.docHeight === 0) {
+      this.setState({
+        docHeight: document.body.scrollHeight - window.innerHeight,
+        scrollPos: document.documentElement.scrollTop,
+      });
+    }
+
+    document.addEventListener("scroll", () => this.handleScroll());
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("scroll", () => this.handleScroll);
+  }
+}
 
 export default Header;
