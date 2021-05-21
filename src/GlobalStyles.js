@@ -7,7 +7,6 @@ export const GlobalStyles = createGlobalStyle`
         --clr-black: #111111;
         --clr-white: #eeeeee;
     }
-    
 
     * {
         box-sizing: border-box;
@@ -43,7 +42,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .active-nav {
+        font-size: 0.9rem !important;
         font-weight: 700;
         pointer-events: none;
+        transition: 0.3s;
     }
 `;
