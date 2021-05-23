@@ -2,33 +2,33 @@ import styled from "styled-components";
 import { Link } from "react-scroll";
 
 export const Container = styled.header`
-  background-color: var(--clr-black);
+  background-color: transparent; //var(--clr-background);
   width: 5vw;
+  min-width: 50px;
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   padding-left: 2vw;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
 `;
 
 export const Navigation = styled.nav`
-  background-color: var(--clr-white);
+  background-color: var(--clr-text);
   width: 1px;
-  height: 90vh;
+  height: 85vh;
   position: relative;
 
   &:before {
     content: "";
-    background-color: var(--clr-white);
-    width: 3px;
+    background-color: var(--clr-text);
+    width: 2px;
     height: ${({ percentage }) => `${percentage}%`};
     position: absolute;
     top: 0;
     left: -1px;
-    z-index: -1;
-    transition: 0.1s ease-in-out;
   }
 `;
 
@@ -44,13 +44,13 @@ export const NavItem = styled.li`
   writing-mode: vertical-rl;
   position: absolute;
   top: ${({ pos }) => `${pos}%`};
-  right: 0;
+  left: 0;
   transform: ${({ pos }) =>
     pos === 0
-      ? "translate(100%, 0)"
+      ? "translate(-100%, 0)"
       : pos >= 95
-      ? "translate(100%, -100%)"
-      : "translate(100%, -50%)"};
+      ? "translate(-100%, -100%)"
+      : "translate(-100%, -50%)"};
 `;
 
 export const NavLink = styled(Link)`
